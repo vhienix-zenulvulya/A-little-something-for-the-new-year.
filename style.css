@@ -1,0 +1,31 @@
+* { box-sizing: border-box; }
+:root { --wine: #4a1024; --wine2: #741d39; --cream: #f8eddf; --ink: #4d2630; }
+body { margin: 0; min-height: 100vh; color: var(--cream); background: radial-gradient(ellipse at 50% 35%, #7a2942 0%, #45101f 48%, #210812 100%); font-family: 'Cormorant Garamond', Georgia, serif; }
+.stage { width: min(760px, 92vw); min-height: 100vh; margin: auto; padding: 48px 0 24px; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; }
+.eyebrow, .date { letter-spacing: .22em; font-size: .72rem; }
+.eyebrow { opacity: .8; margin: 0 0 18px; }
+.flower { color: #d9a6a8; font-size: 2.4rem; text-shadow: 0 0 24px #e7b8bd66; }
+.envelope { width: min(360px, 82vw); height: 220px; margin: 14px auto 12px; border: 1px solid #d5a2a2; border-radius: 5px; background: linear-gradient(145deg, #8b304a, #5a172e); box-shadow: 0 20px 50px #12030a88, inset 0 0 30px #e5b6b522; color: var(--cream); cursor: pointer; position: relative; transition: transform .25s ease, filter .25s ease; }
+.envelope:hover { transform: translateY(-4px); filter: brightness(1.08); }
+.envelope:before { content: ''; position: absolute; inset: 0; background: linear-gradient(145deg, transparent 49.5%, #d8a0a0 50%, transparent 50.5%), linear-gradient(35deg, transparent 49.5%, #d8a0a0 50%, transparent 50.5%); opacity: .55; }
+.envelope-note { font-family: 'Great Vibes', cursive; font-size: 2.5rem; position: relative; z-index: 1; }
+.seal { position: absolute; z-index: 2; left: 50%; top: 58%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; color: #f8e7d8; background: #3c0d20; border: 1px solid #d7a7a1; font-size: 1rem; }
+.hint { margin: 8px 0 28px; color: #e8c9c7; font-style: italic; }
+.letter { display: none; width: min(620px, 92vw); text-align: left; color: var(--ink); background: var(--cream); box-shadow: 0 25px 70px #12030a99; border: 1px solid #e1c5ad; animation: rise .7s ease both; }
+.letter.open { display: block; }
+.letter-inner { padding: clamp(28px, 6vw, 58px); position: relative; overflow: hidden; }
+.letter-inner:before { content: ''; position: absolute; inset: 12px; border: 1px solid #d8b9a8; pointer-events: none; }
+.date { color: #9c6570; margin: 0 0 28px; font-size: .65rem; }
+h1 { font-family: 'Great Vibes', cursive; font-size: clamp(2.7rem, 8vw, 4rem); font-weight: 400; margin: 0 0 18px; color: #6b1c35; }
+.letter p:not(.date):not(.signature):not(.closing):not(.music-note) { font-size: 1.25rem; line-height: 1.55; margin: 0 0 18px; }
+.closing { margin: 28px 0 0; font-size: 1.1rem; }
+.signature { font-family: 'Great Vibes', cursive; color: #741d39; font-size: 2.5rem; margin: 2px 0 24px; }
+.music-area { text-align: center; border-top: 1px solid #dfc8b9; padding-top: 20px; position: relative; z-index: 1; }
+.music-button { border: 1px solid #8b4055; background: #6c1c35; color: #fff2e8; border-radius: 30px; padding: 10px 22px; font: 1rem 'Cormorant Garamond', serif; cursor: pointer; }
+.music-button:hover { background: #842b47; }
+.music-note { font-size: .95rem; color: #8d6870; font-style: italic; margin: 10px 0 0; }
+.bottom-flower { color: #b77a83; text-align: center; font-size: 1.7rem; margin-top: 20px; }
+footer { margin-top: auto; padding-top: 42px; font-size: .8rem; letter-spacing: .12em; color: #d9afb3; opacity: .7; }
+.petals { position: fixed; top: 8%; left: 0; width: 100%; text-align: center; color: #e0a9ae; opacity: .16; font-size: 2rem; pointer-events: none; letter-spacing: 1rem; }
+@keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) { .stage { padding-top: 34px; } .envelope { height: 190px; } .letter p:not(.date):not(.signature):not(.closing):not(.music-note) { font-size: 1.12rem; } }
