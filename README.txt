@@ -1,4 +1,4 @@
-NEW YEAR PEONY LETTER
+NEW YEAR LETTER FOR YURI
 
 To add your own music:
 1. Put your MP3 file in this same folder, beside index.html.
